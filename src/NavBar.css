@@ -1,0 +1,40 @@
+.navbar {
+    height: 80px; /* Ajustamos la altura */
+    display: flex;
+    align-items: center; /* Centramos verticalmente los elementos */
+    background-color: #DA1212;
+    background-image: url('./imagenes/barberia.jpg'); /* Cambia la ruta a tu imagen */
+    background-size: cover; /* Hacemos que la imagen se adapte */
+  }
+  
+  .nav-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center; /* Centramos verticalmente los elementos */
+  }
+  
+  .nav-item {
+    margin-right: 20px; /* Ajustamos el margen entre los elementos */
+  }
+  
+  .nav-item:last-child {
+    margin-right: 0;
+  }
+  
+  .nav-item a {
+    text-decoration: none;
+    color: #041562;
+    font-family: Arial, sans-serif; /* Cambiamos la fuente */
+    font-weight: bold; /* Hacemos el texto más grueso */
+    font-size: 1.2rem; /* Ajustamos el tamaño de la fuente */
+    transition: color 0.3s ease;
+  }
+  
+  .nav-item a:hover {
+    color: #EEEEEE; /* Cambiamos a tu color de hover preferido */
+  }
+  
+  
+  
