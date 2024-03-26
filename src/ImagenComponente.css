@@ -1,0 +1,26 @@
+.container {
+    position: relative;
+    width: 100%;
+    height: 600px; /* Altura del componente */
+    background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20231031/pngtree-barber-s-delight-classic-barbershop-pole-against-a-textured-background-image_13705641.png"); /* Cambia la URL de la imagen */
+    background-size: cover; /* La imagen se ajusta al tamaño del contenedor */
+  }
+  
+  .content {
+    position: relative;
+    z-index: 1; /* Colocamos el contenido sobre la imagen de fondo */
+    padding: 20px;
+    color: #11468F; /* Color de texto */
+    text-align: center; /* Alineamos el texto al centro */
+  }
+  
+  .content h1 {
+    font-size: 2.5rem; /* Tamaño de fuente para el título */
+    margin-bottom: 10px;
+  }
+  
+  .content p {
+    font-size: 1.2rem; /* Tamaño de fuente para el texto */
+  }
+  
+  

@@ -1,6 +1,24 @@
-function App() {
+import React from "react";
+import { NextUIProvider } from "@nextui-org/react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import FormularioIngreso from "./FormularioIngreso";
+import NavBar from "./NavBar.jsx"; // Importa el componente NavBar
 
-  return  <h1>Hola Mundo dixon</h1>
-}
+const App = () => {
+  return (
+    <Router basename="/barber_shop_booking_hub"> {/* Define el basename */}
+      <NextUIProvider>
+        <NavBar /> {/* NavBar siempre presente */}
+        </NextUIProvider>
 
-export default App
+        <Routes>
+          <Route path="/login" element={<FormularioIngreso />} />
+          {/* Otras rutas de tu aplicación */}
+        </Routes>
+    </Router>
+  );
+};
+
+export default App;
+
+

@@ -1,20 +1,44 @@
-import React from 'react';
-import './NavBar.css'; // Archivo de estilos
-import barberIcon from './imagenes/barberia.jpg'; // Ruta a la imagen de la barbería
+import React from "react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Button } from "@nextui-org/react";
+import { AcmeLogo } from "./AcmeLogo.jsx";
+import { Link } from "react-router-dom";
+import "./NavBar.css"; // Archivo de estilos CSS personalizados
 
-const NavBar = () => {
+ function NavBar() {
   return (
-    <nav className="navbar">
-      <div className="nav-logo">
-        <img src={barberIcon} alt="Barbería" width="40" />
-      </div>
-      <ul className="nav-list">
-        <li className="nav-item"><a href="/">Inicio</a></li>
-        <li className="nav-item"><a href="/acerca">Acerca</a></li>
-        <li className="nav-item"><a href="/servicios">Servicios</a></li>
-        <li className="nav-item"><a href="/contacto">Contacto</a></li>
-      </ul>
-    </nav>
+    <Navbar className="custom-navbar">
+      <NavbarBrand>
+        <AcmeLogo />
+        <p className="font-bold text-inherit">Barber Shop Booking Hub</p>
+      </NavbarBrand>
+      <NavbarContent className="navBar-content" justify="center">
+        <NavbarItem className="navBar-item">
+          <Link  to="#">
+            Generación de citas
+          </Link>
+        </NavbarItem>
+        <NavbarItem className="navBar-item">
+          <Link to="#">
+            Productos
+          </Link>
+        </NavbarItem>
+        <NavbarItem className="navBar-item">
+          <Link to="#">
+            Categorías
+          </Link>
+        </NavbarItem>
+      </NavbarContent>
+      <NavbarContent justify="end">
+        <NavbarItem >
+          <Link to="/login">Login</Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Button  color="primary" variant="flat">
+            Sign up            
+          </Button>
+        </NavbarItem>
+      </NavbarContent>
+    </Navbar>
   );
 }
 
