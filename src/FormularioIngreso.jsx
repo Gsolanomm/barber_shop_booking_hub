@@ -89,7 +89,7 @@ export default function SignIn() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-                <Link to="../">Sign In</Link>
+                <Link to="/">Sign In</Link>
               
             </Button>
             <Grid container>
