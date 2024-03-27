@@ -5,23 +5,22 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 
- function TarjetaImagen() {
+function TarjetaImagen({ image, title, description }) {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
         <CardMedia
           component="img"
           height="140"
-          image="https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2023/05/30/un-ejemplar-de-iguana-verde-o-iguana-comun.jpeg"
-          alt="green iguana"
+          image={image} // Utiliza la propiedad 'image' pasada como parámetro
+          alt={title} // Utiliza el título como alt de la imagen
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Lizard
+            {title} {/* Utiliza el título pasado como parámetro */}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            {description} {/* Utiliza la descripción pasada como parámetro */}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -33,4 +32,5 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
     </Card>
   );
 }
+
 export default TarjetaImagen;
