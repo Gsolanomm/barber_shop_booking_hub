@@ -5,23 +5,45 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 
-function TarjetaImagen({ image, title, description }) {
+function TarjetaImagen({ image, title, description, showDetails, email, phone, experience, carouselWidth, carouselHeight }) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: carouselWidth }}>
       <CardActionArea>
         <CardMedia
           component="img"
-          height="140"
-          image={image} // Utiliza la propiedad 'image' pasada como parámetro
-          alt={title} // Utiliza el título como alt de la imagen
+          image={image}
+          alt={title}
+          sx={{
+            height: carouselHeight, // Establecer la altura de la imagen
+            objectFit: 'cover', // Ajusta la imagen para llenar el contenedor manteniendo la proporción
+          }}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {title} {/* Utiliza el título pasado como parámetro */}
+            {title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {description} {/* Utiliza la descripción pasada como parámetro */}
+            {description}
           </Typography>
+          {showDetails && (
+            <>
+              {email && (
+                <Typography variant="body2" color="text.secondary">
+                  Email: {email}
+                </Typography>
+              )}
+              {phone && (
+                <Typography variant="body2" color="text.secondary">
+                  Phone: {phone}
+                </Typography>
+              )}
+              {experience && (
+                <Typography variant="body2" color="text.secondary">
+                  Experience: {experience} years
+                </Typography>
+              )}
+            </>
+          )}
         </CardContent>
       </CardActionArea>
       <CardActions>

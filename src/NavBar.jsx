@@ -131,7 +131,7 @@ function NavBar() {
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Abrir configuración del perfil">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                                <Avatar alt="Remy Sharp" src="https://cdn-icons-png.flaticon.com/512/3135/3135768.png" />
                             </IconButton>
                         </Tooltip>
                         <Menu

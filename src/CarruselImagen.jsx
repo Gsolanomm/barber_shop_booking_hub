@@ -9,37 +9,14 @@ import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from "react-swipeable-views-react-18-fix";
 import { autoPlay } from 'react-swipeable-views-utils-react-18-fix';
+import TarjetaImagen from './TarjetaImagen'; // Importa el componente TarjetaImagen
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
-
-const images = [
-  {
-    label: 'dixon gay',
-    imgPath:
-      'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60',
-  },
-  {
-    label: 'Bird',
-    imgPath:
-      'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60',
-  },
-  {
-    label: 'Bali, Indonesia',
-    imgPath:
-      'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250',
-  },
-  {
-    label: 'Goč, Serbia',
-    imgPath:
-      'https://images.unsplash.com/photo-1512341689857-198e7e2f3ca8?auto=format&fit=crop&w=400&h=250&q=60',
-  },
-];
-
-function SwipeableTextMobileStepper() {
+function SwipeableCardCarousel({ images, carouselWidth, carouselHeight }) { // Recibe el vector de imágenes, ancho y alto del carrusel como props
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = images.length;
+  const [newImages, setNewImages] = React.useState([]); // Estado para almacenar las nuevas imágenes
 
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -49,14 +26,32 @@ function SwipeableTextMobileStepper() {
     setActiveStep((prevActiveStep) => prevActiveStep - 1);
   };
 
-  
-
   const handleStepChange = (step) => {
     setActiveStep(step);
   };
 
+  const handleAddImages = () => {
+    // Simplemente como ejemplo, aquí puedes implementar la lógica para que el usuario agregue imágenes
+    const newImageUrls = [
+      {
+        label: 'New Image 1',
+        imgPath: 'https://via.placeholder.com/400',
+        description: 'Description for New Image 1'
+      },
+      {
+        label: 'New Image 2',
+        imgPath: 'https://via.placeholder.com/400',
+        description: 'Description for New Image 2'
+      },
+    ];
+    setNewImages(newImageUrls);
+  };
+
+  const allImages = [...images, ...newImages]; // Combinar imágenes originales con nuevas imágenes
+
   return (
-    <Box sx={{ maxWidth: 400, flexGrow: 2 }}>
+    <Box sx={{ maxWidth: carouselWidth, flexGrow: 1 }}>
+      {/* Establecer el ancho máximo y el alto del carrusel */}
       <Paper
         square
         elevation={0}
@@ -68,42 +63,38 @@ function SwipeableTextMobileStepper() {
           bgcolor: 'background.default',
         }}
       >
-        <Typography>{images[activeStep].label}</Typography>
+        <Typography>{allImages[activeStep].label}</Typography>
       </Paper>
       <SwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
         index={activeStep}
         onChangeIndex={handleStepChange}
         enableMouseEvents
+        style={{ height: carouselHeight }} 
       >
-        {images.map((step, index) => (
+        {allImages.map((step, index) => (
           <div key={step.label}>
             {Math.abs(activeStep - index) <= 2 ? (
-              <Box
-                component="img"
-                sx={{
-                  height: 255,
-                  display: 'block',
-                  maxWidth: 400,
-                  overflow: 'hidden',
-                  width: '100%',
-                }}
-                src={step.imgPath}
-                alt={step.label}
+              <TarjetaImagen
+                image={step.imgPath}
+                title={step.label}
+                description={step.description}
+                carouselWidth={carouselWidth} // Pasar el ancho del carrusel como prop a la tarjeta
+                carouselHeight={carouselHeight} // Pasar el alto del carrusel como prop a la tarjeta
               />
             ) : null}
           </div>
         ))}
       </SwipeableViews>
       <MobileStepper
-        steps={maxSteps}
+        steps={allImages.length}
         position="static"
         activeStep={activeStep}
         nextButton={
           <Button
             size="small"
             onClick={handleNext}
-            disabled={activeStep === maxSteps - 1}
+            disabled={activeStep === allImages.length - 1}
           >
             Siguiente
             {theme.direction === 'rtl' ? (
@@ -124,8 +115,13 @@ function SwipeableTextMobileStepper() {
           </Button>
         }
       />
+      <Box sx={{ textAlign: 'center', marginTop: 2 }}>
+        <Button variant="contained" onClick={handleAddImages}>
+          Agregar Imágenes
+        </Button>
+      </Box>
     </Box>
   );
 }
 
-export default SwipeableTextMobileStepper;
+export default SwipeableCardCarousel;

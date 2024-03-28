@@ -1,17 +1,59 @@
 import React from 'react';
 import TarjetaImagen from './TarjetaImagen';
-import ImagenComponente from './ImagenComponente';
 import CarruselImagen from "./CarruselImagen.jsx";
 
+const images = [
+  {
+    label: 'Fachero',
+    imgPath:
+      'https://tahecosmetics.com/trends/wp-content/uploads/2023/02/mohicano-personalizado.jpg',
+    description: 'Description for Fachero',
+  },
+  {
+    label: 'Corte 2',
+    imgPath:
+      'https://i.pinimg.com/736x/e0/68/f6/e068f67b0c60ea69f250dbe2bc468c40.jpg',
+    description: 'Description for Corte 2',
+  },
+  {
+    label: 'Corte 3',
+    imgPath:
+      'https://tinteparaelcabello.com/wp-content/uploads/2023/02/Mejores-Cortes-de-Cabello-para-Hombre-01.jpg',
+    description: 'Description for corte 3',
+  },
+  {
+    label: 'Messi es messi',
+    imgPath:
+      'https://i.pinimg.com/736x/18/e1/9e/18e19e643a0b28ef7fc7c776807601b8.jpg',
+    description: 'Description for Messi',
+  },
+];
+
 const UserView = () => {
+
+  const showDetails = true; // Puedes cambiar este valor según tus necesidades
+  const email = 'example@example.com'; // Ejemplo de correo electrónico
+  const phone = '123-456-7890'; // Ejemplo de número de teléfono
+  const experience = 5; // Ejemplo de años de experiencia
+
   return (
     <div className="user-view">
       <div className="user-view__container">
-        <div className="user-view__card-container">
-          <CarruselImagen />
+        <div className='information-profile'>
+          <TarjetaImagen
+            image="https://cdn-icons-png.flaticon.com/512/3135/3135768.png"
+            title="Nombre de la persona"
+            description="Barbero Profesional"
+            showDetails={showDetails}
+            email={email}
+            phone={phone}
+            experience={experience}
+            carouselWidth={400} // Puedes ajustar el ancho del carrusel aquí
+            carouselHeight={400}
+          />     
         </div>
-        <div className="user-view__image-container">
-          <ImagenComponente />
+        <div className="user-view__card-container">
+          <CarruselImagen images={images} carouselWidth={500} carouselHeight={600} />
         </div>
       </div>
       <style jsx>{`
@@ -19,34 +61,50 @@ const UserView = () => {
           display: flex;
           align-items: center;
           justify-content: center;
-          height: 100vh;
-          background-image: url('https://institutoferrer.com/wp-content/uploads/2022/06/BARBERIA-scaled.jpg');
-          background-size: cover;
-          background-position: center;
-          background-repeat: no-repeat;
+          min-height: 100vh;
+          padding: 50px 0; /* Ajustar el padding según tus preferencias */
+          background-image: url("https://thumbs.dreamstime.com/b/herramientas-de-barbershop-en-un-fondo-negro-sin-fisuras-gr%C3%A1ficos-vectoriales-problemas-162446998.jpg");
+          background-size: cover; /* Ajustar el tamaño de la imagen de fondo */
+          background-position: center; /* Centrar la imagen de fondo */
         }
+
         .user-view__container {
+          background-color: rgba(255, 255, 255, 0.9);
+          border-radius: 10px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+          width: 90%;
+          max-width: 800px; /* Ajustar el ancho máximo según tus preferencias */
+          padding: 20px;
+          margin: auto;
+          display: flex;
+          flex-direction: column;
+          gap: 20px; /* Espacio entre elementos hijos */
+        }
+
+        .information-profile {
+          margin-bottom: 20px;
           display: flex;
           flex-direction: column;
           align-items: center;
-          justify-content: center;
-          gap: 20px;
-          background-color: rgba(255, 255, 255, 0.5); /* Ajusta el valor alfa (0.3) para cambiar la transparencia */
-          padding: 20px;
-          border-radius: 10px;
-          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+          text-align: center; /* Alinea el contenido de manera horizontal */
         }
-        .user-view__card-container,
-        .user-view__image-container {
-            padding: 12px ;
-          background-color: rgba(255, 255, 255, 0.1);
-          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+        
+        .user-view__card-container {
+          min-width: 0; /* Permite que el carrusel se reduzca más allá de su tamaño mínimo */
           border-radius: 5px;
           overflow: hidden;
-          width: 100%;
           display: flex;
-          align-items: center;
           justify-content: center;
+        }
+
+        @media screen and (max-width: 768px) {
+          .user-view {
+            padding: 20px 0; /* Ajustar el padding en pantallas más pequeñas */
+          }
+          .user-view__container {
+            width: 95%;
+          }
         }
       `}</style>
     </div>
