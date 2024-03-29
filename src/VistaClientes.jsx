@@ -1,62 +1,80 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importa el CSS de Bootstrap
-
-
-
+import './VistaClientes.css'; // Importa el CSS local
 
 const VistaClientes = () => {
-    const [nombre, setNombre] = useState('');
-    const [apellido, setApellido] = useState('');
+    const [name, setNombre] = useState('');
+    const [lastName, setApellido] = useState('');
     const [email, setEmail] = useState('');
-    const [telefono, setTelefono] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Aquí puedes enviar los datos a una API o guardarlos en una base de datos
-        // Por ahora, solo los mostramos en la consola
-        console.log('Form submitted:', { nombre, apellido, email, telefono });
+        // if (password !== confirmPassword) {
+        //     alert('Las contraseñas no coinciden');
+        //     return;
+        // }
+        // // Create a new object with the information
+        // const newClient = {
+        //     name,
+        //     lastName,
+        //     email,
+        //     password,    
+        // };
+        // // Save the new client in the array  
+        
     };
 
+    
     return (
-        <div>
-            <h1>Customer Registration</h1>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="nombre">First Name:</label>
-                <input
-                    type="text"
-                    id="nombre"
-                    value={nombre}
-                    onChange={(e) => setNombre(e.target.value)}
-                />
+        <div className="container"> 
+            
+            <h2 className='main-title'>Crear cuenta</h2>
+            <form className='formularioClientes' onSubmit={handleSubmit}>
+                <div className="form-floating mb-3">
+                    <input type="text" className="form-control" id="nombre" placeholder='' value={name} onChange={(e) => setNombre(e.target.value)} required />
+                    <label htmlFor="nombre">Nombre</label>
+                </div>
 
-                <label htmlFor="apellido">Last Name:</label>
-                <input
-                    type="text"
-                    id="apellido"
-                    value={apellido}
-                    onChange={(e) => setApellido(e.target.value)}
-                />
+                <div className="form-floating mb-3">
+                    <input type="text" className="form-control" id="apellido" placeholder='' value={lastName} onChange={(e) => setApellido(e.target.value)} required />
+                    <label htmlFor="apellido">Apellido</label>
+                </div>
 
-                <label htmlFor="email">Email:</label>
-                <input
-                    type="email"
-                    id="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                />
+                <div className="form-floating mb-3">
+                    <input type="email" className="form-control" id="correo" placeholder='' value={email} onChange={(e) => setEmail(e.target.value)} required />
+                    <label htmlFor="correo">Correo</label>
+                </div>
+                
+                <div className="form-floating mb-3">
+                    <input type="text" className="form-control" id="telefono" placeholder='' required />
+                    <label htmlFor="telefono">Teléfono</label>
+                </div>
 
-                <label htmlFor="telefono">Phone Number:</label>
-                <input
-                    type="tel"
-                    id="telefono"
-                    value={telefono}
-                    onChange={(e) => setTelefono(e.target.value)}
-                />
+                <div className="form-floating mb-3">
+                    <input type="password" className="form-control" id="contrasena" placeholder='' required/>
+                    <label htmlFor="contrasena">Contraseña</label>
+                </div>
 
-                <button type="submit">Register</button>
+                <div className="form-floating mb-3">
+                    <input type="password" className="form-control" id="confirmarContrasena" placeholder='' required />
+                    <label htmlFor="confirmarContrasena">Confirmar contraseña</label>
+                </div>
+
+                <div className="form-check mb-3">
+                    <input className="form-check-input" type="checkbox" value="" id="publicidad" required />
+                    <label className="form-check-label" htmlFor="publicidad">
+                        Acepto recibir publicidad
+                    </label>
+                </div>
+                <button type="submit" className="btn btn-primary">Crear</button>
+                <br/>
+                
+                <p>Al crear cuenta, aceptas las condiciones de uso<a href="XD"> Condiciones de uso</a> y <a href="XD">Notificaciones de Privacidad</a></p>
+
             </form>
         </div>
+        
     );
 };
 
-export default VistaClientes;   // Exporta el componente para poder ser utilizado en otros archivos
+export default VistaClientes;
