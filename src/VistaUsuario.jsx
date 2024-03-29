@@ -64,8 +64,9 @@ const UserView = () => {
           min-height: 100vh;
           padding: 50px 0; /* Ajustar el padding según tus preferencias */
           background-image: url("https://thumbs.dreamstime.com/b/herramientas-de-barbershop-en-un-fondo-negro-sin-fisuras-gr%C3%A1ficos-vectoriales-problemas-162446998.jpg");
-          background-size: cover; /* Ajustar el tamaño de la imagen de fondo */
+          background-size: auto; /* Ajustar el tamaño de la imagen de fondo */
           background-position: center; /* Centrar la imagen de fondo */
+          background-repeat: repeat; /* Repetir la imagen en el fondo */
         }
 
         .user-view__container {

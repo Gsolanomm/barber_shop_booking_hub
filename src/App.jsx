@@ -4,6 +4,8 @@ import FormularioIngreso from "./FormularioIngreso";
 import NavBar from "./NavBar.jsx"; // Importa el componente NavBar
 import VistaUsuario from "./VistaUsuario.jsx";
 import VistaCategoria from "./VistaCategorias.jsx";
+import Footer from "./Footer.jsx";
+import VistaPrincipal from "./VistaPrincipal.jsx";
 
   const data = [
     {
@@ -85,6 +87,7 @@ const App = () => {
         <NavBar /> {/* NavBar siempre presente */}
         
         <Routes>
+          <Route path="/" element={<VistaPrincipal />} />
           <Route path="/login" element={<FormularioIngreso />} />
           <Route path="/perfil" element={<VistaUsuario/> } />
           <Route path="/cuenta" element={<VistaCategoria data={data} loading={false}/> } />
@@ -93,6 +96,8 @@ const App = () => {
 
           {/* Otras rutas de tu aplicación */}
         </Routes>
+
+        <Footer/>
     </Router>
   );
 };

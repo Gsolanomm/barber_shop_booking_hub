@@ -67,7 +67,7 @@ const VistaCategorias = () => {
   };
 
   return (
-    <div className="vista-categorias" style={{ backgroundImage: 'url("https://thumbs.dreamstime.com/b/herramientas-de-barbershop-en-un-fondo-negro-sin-fisuras-gr%C3%A1ficos-vectoriales-problemas-162446998.jpg")' }}>
+    <div className="vista-categorias" >
       <CustomizedMenus handleCategoriaChange={handleCategoriaChange} /> {/* Menú de opciones */}
       <div className="carrusel-imagen">
         {/* Carrusel de imágenes */}
@@ -81,9 +81,10 @@ const VistaCategorias = () => {
           justify-content: center;
           width: 100%; /* Ajustar al ancho completo del contenedor */
           height: 100vh; /* Establecer la altura como el 100% del viewport */
-          background-size: cover; /* Ajustar la imagen de fondo para cubrir el contenedor */
+          background-image: url("https://thumbs.dreamstime.com/b/herramientas-de-barbershop-en-un-fondo-negro-sin-fisuras-gr%C3%A1ficos-vectoriales-problemas-162446998.jpg");
+          background-size: auto; /* Ajustar el tamaño de la imagen de fondo */
           background-position: center; /* Centrar la imagen de fondo */
-          background-repeat: no-repeat; /* Evitar la repetición de la imagen de fondo */
+          background-repeat: repeat; /* Repetir la imagen en el fondo */
         }
         .carrusel-imagen {
           width: 90%; /* Ajusta el ancho según tus necesidades */
