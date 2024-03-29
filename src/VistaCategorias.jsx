@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CarruselImagen from './CarruselImagen';
 import CustomizedMenus from './MenuCategorias';
 
+
 const VistaCategorias = () => {
   const [categoria, setCategoria] = useState('Mullet'); // Estado para almacenar la categoría seleccionada
 

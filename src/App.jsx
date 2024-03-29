@@ -6,6 +6,7 @@ import VistaUsuario from "./VistaUsuario.jsx";
 import VistaCategoria from "./VistaCategorias.jsx";
 import Footer from "./Footer.jsx";
 import VistaPrincipal from "./VistaPrincipal.jsx";
+import CrearCuenta from "./CrearCuenta.jsx"
 
   const data = [
     {
@@ -90,6 +91,7 @@ const App = () => {
           <Route path="/" element={<VistaPrincipal />} />
           <Route path="/login" element={<FormularioIngreso />} />
           <Route path="/perfil" element={<VistaUsuario/> } />
+          <Route path="/inscribirse" element={<CrearCuenta/> } />
           <Route path="/cuenta" element={<VistaCategoria data={data} loading={false}/> } />
 
 
