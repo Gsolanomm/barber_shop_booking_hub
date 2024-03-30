@@ -7,7 +7,7 @@ import VistaCategoria from "./VistaCategorias.jsx";
 import Footer from "./Footer.jsx";
 import VistaPrincipal from "./VistaPrincipal.jsx";
 import CrearCuenta from "./CrearCuenta.jsx"
-import VistaClientes from "./VistaClientes.jsx";
+import RegistroClientes from "./RegistroClientes.jsx";
 
   const data = [
     {
@@ -94,7 +94,9 @@ const App = () => {
           <Route path="/perfil" element={<VistaUsuario/> } />
           <Route path="/inscribirse" element={<CrearCuenta/> } />
           <Route path="/cuenta" element={<VistaCategoria data={data} loading={false}/> } />
-          <Route path="/clientes" element={<VistaClientes/> } />
+
+          <Route path="/registroclientes" element={<RegistroClientes/> } /> { /* Falta para el Crud */}
+          <Route path="/ingresocliente" element={<IngresoClientes/> } />
 
 
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importa el CSS de Bootstrap
-import './VistaClientes.css'; // Importa el CSS local
+import './RegistroClientes.css'; // Importa el CSS local
 
 const VistaClientes = () => {
     const [name, setNombre] = useState('');
@@ -21,15 +21,16 @@ const VistaClientes = () => {
         //     password,    
         // };
         // // Save the new client in the array  
-        
+
     };
 
-    
     return (
-        <div className="container"> 
-            
+        
+        <div className="container">
+
             <h2 className='main-title'>Crear cuenta</h2>
             <form className='formularioClientes' onSubmit={handleSubmit}>
+               
                 <div className="form-floating mb-3">
                     <input type="text" className="form-control" id="nombre" placeholder='' value={name} onChange={(e) => setNombre(e.target.value)} required />
                     <label htmlFor="nombre">Nombre</label>
@@ -44,14 +45,14 @@ const VistaClientes = () => {
                     <input type="email" className="form-control" id="correo" placeholder='' value={email} onChange={(e) => setEmail(e.target.value)} required />
                     <label htmlFor="correo">Correo</label>
                 </div>
-                
+
                 <div className="form-floating mb-3">
                     <input type="text" className="form-control" id="telefono" placeholder='' required />
                     <label htmlFor="telefono">Teléfono</label>
                 </div>
 
                 <div className="form-floating mb-3">
-                    <input type="password" className="form-control" id="contrasena" placeholder='' required/>
+                    <input type="password" className="form-control" id="contrasena" placeholder='' required />
                     <label htmlFor="contrasena">Contraseña</label>
                 </div>
 
@@ -67,14 +68,15 @@ const VistaClientes = () => {
                     </label>
                 </div>
                 <button type="submit" className="btn btn-primary">Crear</button>
-                <br/>
-                
+                <br />
+
                 <p>Al crear cuenta, aceptas las condiciones de uso<a href="XD"> Condiciones de uso</a> y <a href="XD">Notificaciones de Privacidad</a></p>
 
             </form>
         </div>
-        
+
     );
+
 };
 
 export default VistaClientes;
