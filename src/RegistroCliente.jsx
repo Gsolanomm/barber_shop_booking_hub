@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Importa el CSS de Bootstrap
-import './RegistroClientes.css'; // Importa el CSS local
+import './RegistroCliente.css'; // Importa el CSS local
 
-const VistaClientes = () => {
+const RegistroCliente = () => {
     const [name, setNombre] = useState('');
     const [lastName, setApellido] = useState('');
     const [email, setEmail] = useState('');
@@ -79,4 +79,4 @@ const VistaClientes = () => {
 
 };
 
-export default VistaClientes;
+export default RegistroCliente;
