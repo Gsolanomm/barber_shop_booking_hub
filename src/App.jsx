@@ -8,7 +8,7 @@ import Footer from "./Footer.jsx";
 import VistaPrincipal from "./VistaPrincipal.jsx";
 import CrearCuenta from "./CrearCuenta.jsx"
 import RegistroCliente from "./RegistroCliente.jsx";
-import IngresoCliente from "./IngresoCliente.jsx";
+import Cliente from "./Cliente.jsx";
 
   const data = [
     {
@@ -95,10 +95,14 @@ const App = () => {
           <Route path="/perfil" element={<VistaUsuario/> } />
           <Route path="/inscribirse" element={<CrearCuenta/> } />
           <Route path="/cuenta" element={<VistaCategoria data={data} loading={false}/> } />
-         
+   
           <Route path="/registrocliente" element={<RegistroCliente/> } />
-          <Route path="/ingresocliente" element={<IngresoCliente/> } />
+          <Route path="/clientesXD" element={<Cliente/> } />
+    
+          
 
+          
+        
 
 
           {/* Otras rutas de tu aplicación */}
