@@ -1,8 +1,8 @@
 import React from 'react';
-import './App.css';
-import imagenCobre from './image/cobre.jpg';
-import imagenPlata from './image/plata.jpg';
-import imagenOro from './image/oro.jpg';
+import './Membresias.css';
+import imagenCobre from './imagenes/cobre.jpg';
+import imagenPlata from './imagenes/plata.jpg';
+import imagenOro from './imagenes/oro.jpg';
 
 function App() {
   return (
