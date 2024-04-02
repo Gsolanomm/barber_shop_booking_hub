@@ -1,42 +1,79 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import ListSubheader from '@mui/material/ListSubheader';
 import IconButton from '@mui/material/IconButton';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import InfoIcon from '@mui/icons-material/Info';
 
-export default function TitlebarImageList() {
+const ImagenComponente = ({ images, showAddIcon }) => {
+  const [selectedItem, setSelectedItem] = useState(null);
+
+  const handleAddClick = (item) => {
+    setSelectedItem(selectedItem === item ? null : item);
+  };
+
   return (
-    <ImageList sx={{ width: 400, height: 450 }}>
-      <ImageListItem key="Subheader" cols={2}>
-        <ListSubheader component="div">Cortes Subidos</ListSubheader>
-      </ImageListItem>
-      {itemData.map((item) => (
-        <ImageListItem key={item.img}>
-          <img
-            srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-            src={`${item.img}?w=248&fit=crop&auto=format`}
-            alt={item.title}
-            loading="lazy"
-          />
-          <ImageListItemBar
-            title={item.title}
-            subtitle={item.author}
-            actionIcon={
-              <IconButton
-                sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
-                aria-label={`info about ${item.title}`}
-              >
-                <InfoIcon />
-              </IconButton>
-            }
-          />
+    <div>
+      <ImageList sx={{ width: 400, height: 450 }}>
+        <ImageListItem key="Subheader" cols={2}>
+          <ListSubheader component="div">Cortes Subidos</ListSubheader>
         </ImageListItem>
-      ))}
-    </ImageList>
+        {images.map((item) => (
+          <ImageListItem
+            key={item.img}
+            sx={{ backgroundColor: selectedItem === item ? 'rgba(0, 0, 0, 0.1)' : 'transparent' }}
+          >
+            <img
+              srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+              src={`${item.img}?w=248&fit=crop&auto=format`}
+              alt={item.title}
+              loading="lazy"
+            />
+            <ImageListItemBar
+              title={item.title}
+              subtitle={item.author}
+              actionIcon={
+                showAddIcon ? (
+                  <IconButton
+                    sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
+                    aria-label={`add ${item.title}`}
+                    onClick={() => handleAddClick(item)}
+                  >
+                    <AddCircleOutlineIcon />
+                  </IconButton>
+                ) : (
+                  <IconButton
+                    sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
+                    aria-label={`info about ${item.title}`}
+                  >
+                    <InfoIcon />
+                  </IconButton>
+                )
+              }
+            />
+          </ImageListItem>
+        ))}
+      </ImageList>
+      <div>
+        <h2></h2>
+        {selectedItem ? (
+          <div>
+            <p>{selectedItem.title}</p>
+            <p>precio: {selectedItem.author}</p>
+            <img src={selectedItem.img} alt={selectedItem.title} style={{ width: '200px', height: 'auto' }} />
+          </div>
+        ) : (
+          <p></p>
+        )}
+      </div>
+    </div>
   );
-}
+};
+
+export default ImagenComponente;
+
 
 const itemData = [
   {

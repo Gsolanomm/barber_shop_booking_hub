@@ -1,0 +1,36 @@
+.cortes-table th,
+.cortes-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+.cortes-table th:first-child,
+.cortes-table td:first-child {
+  width: 200px; /* Anchura de la primera columna (imagen) */
+}
+
+.cortes-table th:nth-child(2),
+.cortes-table td:nth-child(2) {
+  width: 200px; /* Anchura de la segunda columna (nombre) */
+}
+
+.cortes-table th:nth-child(3),
+.cortes-table td:nth-child(3) {
+  width: 200px; /* Anchura de la tercera columna (precio) */
+}
+
+.corte-imagen {
+  width: 100px; /* Establece el ancho deseado para todas las imágenes */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.cortes-table tr:hover {
+  background-color: #11468F; /* Cambia el color de fondo cuando el cursor pasa por encima */
+  cursor: pointer; /* Cambia el cursor a un puntero cuando pasa por encima */
+}
+
+.cortes-table tr.selected {
+  background-color: #11468F; /* Cambia el color de fondo para el elemento seleccionado */
+}
