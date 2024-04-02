@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 import FormularioIngreso from "./FormularioIngreso";
 import NavBar from "./NavBar.jsx"; // Importa el componente NavBar
 import VistaUsuario from "./VistaUsuario.jsx";
@@ -9,6 +9,8 @@ import VistaPrincipal from "./VistaPrincipal.jsx";
 import CrearCuenta from "./CrearCuenta.jsx"
 import RegistroCliente from "./RegistroCliente.jsx";
 import Membresias from "./Membresias.jsx";
+import Citas from "./Citas.jsx"; // Importa el componente de citas
+import Productos from "./Productos.jsx";
 
   const data = [
     {
@@ -87,6 +89,8 @@ import Membresias from "./Membresias.jsx";
 const App = () => {
   return (
     <Router basename="/barber_shop_booking_hub"> {/* Define el basename */}
+
+
         <NavBar /> {/* NavBar siempre presente */}
         
         <Routes>
@@ -95,6 +99,9 @@ const App = () => {
           <Route path="/perfil" element={<VistaUsuario/> } />
           <Route path="/inscribirse" element={<CrearCuenta/> } />
           <Route path="/cuenta" element={<VistaCategoria data={data} loading={false}/> } />
+
+          <Route path="/citas" element={<Citas />} />
+          <Route path="/productos" element={<Productos />} />
          
           <Route path="/registrocliente" element={<RegistroCliente/> } />
           <Route path="/membresias" element={<Membresias/> } />
@@ -104,11 +111,44 @@ const App = () => {
           {/* Otras rutas de tu aplicación */}
         </Routes>
 
+
+        <HomeButton />
+
         <Footer/>
+
+       
+
+     
     </Router>
   );
 };
 
+const HomeButton = () => {
+  const location = useLocation();
+
+  // Verifica si la ubicación actual coincide con la ruta base
+  if (location.pathname === "/") {
+    return (
+      <center>
+        <div style={{ backgroundColor: 'white' }}>
+          <Link to="/citas">
+            <button id="dates"
+              style={{ backgroundColor: '#DA1212', color: 'white', borderRadius: '5px', marginTop: '10px', marginBottom:'10px' }}
+            >
+              Agendar citas
+            </button>
+          </Link>
+        </div>
+      </center>
+    );
+  } else {
+    return null; // Si no es la ruta base, no se renderiza el botón
+  }
+};
+
 export default App;
+
+
+
 
 
