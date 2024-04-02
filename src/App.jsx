@@ -112,7 +112,7 @@ const App = () => {
           <Route path="/registrocliente" element={<RegistroCliente/> } />
           
           <Route path="/membresias" element={<Membresias/> } />
-          <Route path="/carritoDeCompras" element={<CarritoDeCompras/> } />
+          <Route path="/carrito de compras" element={<CarritoDeCompras/> } />
    
           <Route path="/registrocliente" element={<RegistroCliente/> } />
           <Route path="/clientesXD" element={<Cliente/> } />
