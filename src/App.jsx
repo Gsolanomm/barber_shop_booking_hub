@@ -8,7 +8,8 @@ import Footer from "./Footer.jsx";
 import VistaPrincipal from "./VistaPrincipal.jsx";
 import CrearCuenta from "./CrearCuenta.jsx"
 import RegistroCliente from "./RegistroCliente.jsx";
-import Membresias from "./Membresias.jsx";
+//import Membresias from "./Membresias.jsx";
+//<Route path="/membresias" element={<Membresias/> } />
 
   const data = [
     {
@@ -97,7 +98,7 @@ const App = () => {
           <Route path="/cuenta" element={<VistaCategoria data={data} loading={false}/> } />
          
           <Route path="/registrocliente" element={<RegistroCliente/> } />
-          <Route path="/membresias" element={<Membresias/> } />
+          
 
 
 
