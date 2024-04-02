@@ -16,7 +16,7 @@ import logo from './imagenes/Logo2.jpeg'; // Importa la imagen del logo
 import Avatar from '@mui/material/Avatar';
 
 
-const pages = ['Productos', 'Categorías', 'Carrito de compras'];
+const pages = ['Productos', 'Categorías', 'Membresías', 'Carrito de compras'];
 const settings = ['Perfil', 'Cuenta', 'Login', 'Cerrar sesión'];
 
 function NavBar() {
