@@ -9,7 +9,9 @@ import VistaPrincipal from "./VistaPrincipal.jsx";
 import CrearCuenta from "./CrearCuenta.jsx"
 import RegistroCliente from "./RegistroCliente.jsx";
 
-import Membresias from "./Membresias.jsx";
+import Membresias from "./Membresias.jsx"; 
+import CarritoDeCompras from "./CarritoDeCompras.jsx"; 
+
 import Citas from "./Citas.jsx"; // Importa el componente de citas
 import Productos from "./Productos.jsx";
 import Cliente from "./Cliente.jsx";
@@ -108,8 +110,9 @@ const App = () => {
           <Route path="/productos" element={<Productos />} />
          
           <Route path="/registrocliente" element={<RegistroCliente/> } />
+          
           <Route path="/membresias" element={<Membresias/> } />
-
+          <Route path="/carritoDeCompras" element={<CarritoDeCompras/> } />
    
           <Route path="/registrocliente" element={<RegistroCliente/> } />
           <Route path="/clientesXD" element={<Cliente/> } />

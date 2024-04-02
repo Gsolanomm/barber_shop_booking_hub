@@ -1,0 +1,97 @@
+.carrito-de-compras-container {
+    background-image: url('https://blog.neothek.com/wp-content/uploads/2015/06/carrito-compras-online2.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .carrito-de-compras-container .carrito-de-compras-section {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    width: 60%;
+    margin: 0 auto;
+  }
+  
+  .carrito-de-compras-container .carrito-de-compras-section .container {
+    border: 5px solid #575555;
+    margin: 5px;
+    flex: 1;
+    height: 100%;
+    background-color: rgba(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .membership-list {
+    text-align: left;
+    padding-left: 20px;
+    list-style-type: none;
+  }
+  
+  .membership-list li {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+    padding: 5px 0;
+    border-bottom: 1px solid #cccccc;
+  }
+  
+  .membership-list li:last-child {
+    border-bottom: none;
+  }
+  
+  .membership-list li::before {
+    content: "\2022";
+    color: #5cb3fd;
+    font-size: 20px;
+    padding-right: 5px;
+  }
+  
+  .obtener-button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .obtener-button:hover {
+    transform: scale(1.1);
+  }
+  
+  .obtener-button.basic-color {
+    background-color: #8e402a;
+    border-color: #8e402a;
+    color: white;
+  }
+  
+  .obtener-button.pro-color {
+    background-color: #BEBEBE;
+    border-color: #BEBEBE;
+    color: white;
+  }
+  
+  .obtener-button.premier-color {
+    background-color: #FFD700;
+    border-color: #FFD700;
+    color: white;
+  }
+  
+  /* Nuevos estilos para centrar contenido */
+  .container {
+    text-align: center;
+  }
+  
+  .container img {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .container p,
+  .container h1 {
+    margin: 0 auto;
+  }
+  
