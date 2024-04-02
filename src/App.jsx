@@ -8,9 +8,13 @@ import Footer from "./Footer.jsx";
 import VistaPrincipal from "./VistaPrincipal.jsx";
 import CrearCuenta from "./CrearCuenta.jsx"
 import RegistroCliente from "./RegistroCliente.jsx";
+<<<<<<< HEAD
 import Membresias from "./Membresias.jsx";
 import Citas from "./Citas.jsx"; // Importa el componente de citas
 import Productos from "./Productos.jsx";
+=======
+import Cliente from "./Cliente.jsx";
+>>>>>>> 5d4416d517f6231f037e085d181a774140fe70a5
 
   const data = [
     {
@@ -99,13 +103,23 @@ const App = () => {
           <Route path="/perfil" element={<VistaUsuario/> } />
           <Route path="/inscribirse" element={<CrearCuenta/> } />
           <Route path="/cuenta" element={<VistaCategoria data={data} loading={false}/> } />
+<<<<<<< HEAD
 
           <Route path="/citas" element={<Citas />} />
           <Route path="/productos" element={<Productos />} />
          
           <Route path="/registrocliente" element={<RegistroCliente/> } />
           <Route path="/membresias" element={<Membresias/> } />
+=======
+   
+          <Route path="/registrocliente" element={<RegistroCliente/> } />
+          <Route path="/clientesXD" element={<Cliente/> } />
+    
+          
+>>>>>>> 5d4416d517f6231f037e085d181a774140fe70a5
 
+          
+        
 
 
           {/* Otras rutas de tu aplicación */}
